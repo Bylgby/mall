@@ -8,7 +8,7 @@
 
 package com.martinyuyy.common.validator;
 
-import com.matinyuyy.exception.RRException;
+import com.martinyuyy.common.exception.RRException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
