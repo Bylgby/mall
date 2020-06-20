@@ -1,11 +1,18 @@
 server:
   port: 8000
 spring:
+  application:
+    name: mall-member
   datasource:
     username: martinyuyy
     password: qwer2580.0
     url: jdbc:mysql://106.13.53.40:3306/mall_ums
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.13.53.40:8848
+
 
 
 mybatis-plus:
