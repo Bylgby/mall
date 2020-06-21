@@ -3,12 +3,9 @@ package com.martinyuyy.mall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.martinyuyy.mall.member.feign.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.martinyuyy.mall.member.entity.UmsMemberEntity;
 import com.martinyuyy.mall.member.service.UmsMemberService;
@@ -29,6 +26,14 @@ import com.martinyuyy.common.utils.R;
 public class UmsMemberController {
     @Autowired
     private UmsMemberService umsMemberService;
+    @Autowired
+    private CouponService couponService;
+
+    @GetMapping("/coupons")
+    public R getAllCoupons(){
+        R r = couponService.memberCoupons();
+        return R.ok().put("data", r.get("coupons"));
+    }
 
     /**
      * 列表

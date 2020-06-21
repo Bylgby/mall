@@ -1,10 +1,10 @@
-package com.martinyuyy.mall.product;
+package com.martinyuyy.mall.gateway;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MallProductApplicationTests {
+class MallGatewayApplicationTests {
 
     @Test
     void contextLoads() {

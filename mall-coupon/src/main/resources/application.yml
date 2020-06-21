@@ -1,17 +1,17 @@
-server:
-  port: 7000
-spring:
-  application:
-    name: mall-coupon
-  datasource:
-    username: martinyuyy
-    password: qwer2580.0
-    url: jdbc:mysql://106.13.53.40:3306/mall_sms
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 106.13.53.40:8848
+#server:
+#  port: 7000
+#spring:
+#  application:
+#    name: mall-coupon
+#  datasource:
+#    username: martinyuyy
+#    password: qwer2580.0
+#    url: jdbc:mysql://106.13.53.40:3306/mall_sms
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 106.13.53.40:8848
 
 
 

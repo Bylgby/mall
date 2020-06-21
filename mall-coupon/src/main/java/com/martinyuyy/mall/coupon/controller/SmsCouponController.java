@@ -4,11 +4,9 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
 
 import com.martinyuyy.mall.coupon.entity.SmsCouponEntity;
 import com.martinyuyy.mall.coupon.service.SmsCouponService;
@@ -24,11 +22,31 @@ import com.martinyuyy.common.utils.R;
  * @email martinyuyy@gmail.com
  * @date 2020-06-19 17:32:32
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/smscoupon")
 public class SmsCouponController {
     @Autowired
     private SmsCouponService smsCouponService;
+
+    @Value("${name}")
+    private String name;
+    @Value("${age}")
+    private Integer age;
+
+    @GetMapping("/test")
+    public R test(){
+        return R.ok().put("name",name).put("age",age);
+
+    }
+
+
+    @GetMapping("member/list")
+    public R memberCoupons(){
+        SmsCouponEntity entity = new SmsCouponEntity();
+        entity.setCouponName("8折");
+        return R.ok().put("coupons", Arrays.asList(entity));
+    }
 
     /**
      * 列表
